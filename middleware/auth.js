@@ -6,7 +6,7 @@ const auth = (req,res,next) => {
     console.log(req.headers.authorization);
     const authHeader = req.headers.authorization;
     console.log(authHeader)
-    if(!authHeader || !authHeader.startsWith("Bearer ")){
+    if(!authHeader || !authHeader.startsWith("Bearer")){
         throw new BadRequestError("No Token Provided", 401);
     }
 
