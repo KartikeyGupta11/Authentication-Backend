@@ -11,12 +11,12 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(express.static('./public'));
-app.use("/api/v1",userRoutes);
+
 
 app.get('/',(req,res) =>{
     res.send("<h1>JWT Basic</h1>")
 })
-
+app.use("/api/v1",userRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
